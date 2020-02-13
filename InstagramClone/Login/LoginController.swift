@@ -13,10 +13,10 @@ class LoginController: UIViewController {
     
     private let logoContainerView: UIView = {
         let container = UIView()
-        let logoImageView = UIImageView(image: #imageLiteral(resourceName: "logo"))
+        let logoImageView = UIImageView(image: #imageLiteral(resourceName: "logo_big"))
         logoImageView.contentMode = .scaleAspectFill
         container.addSubview(logoImageView)
-        logoImageView.anchor(width: 200, height: 50)
+        logoImageView.anchor(width: 200, height: 200)
         logoImageView.centerXAnchor.constraint(equalTo: container.centerXAnchor).isActive = true
         logoImageView.centerYAnchor.constraint(equalTo: container.centerYAnchor).isActive = true
         return container

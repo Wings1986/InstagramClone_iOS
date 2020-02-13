@@ -65,7 +65,9 @@ class HomePostDetailsController: UIViewController {
     
     static var cellId = "NewhomePostCellId"
     
-    override func viewDidLoad() {
+    //override func viewDidLoad() {
+
+    override func viewDidAppear(_ animated: Bool) {
         title = post.title
         let scrollView = UIScrollView()
         
@@ -105,10 +107,13 @@ class HomePostDetailsController: UIViewController {
     }
     
     private func setupAttributedCaption() {
-        let data = Data(post.description.utf8)
-        if let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
-            descriptionLabel.attributedText = attributedString
-        }
+//        let data = Data(post.description.utf8)
+//        if let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+//            descriptionLabel.attributedText = attributedString
+//        }
+        
+//        descriptionLabel.attributedText = post.description.html2Attributed
+        descriptionLabel.attributedText = post.description.htmlAttributed(family: "OpenSan", size: 12, color: UIColor.init(red: 0.2, green: 0.2, blue: 0.2, alpha: 1))
     }
     
     private func setLikes(to value: Int) {

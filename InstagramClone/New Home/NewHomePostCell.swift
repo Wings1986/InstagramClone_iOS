@@ -44,6 +44,10 @@ class NewHomePostCell: UICollectionViewCell {
     
     private lazy var likeButton: UIButton = {
         let button = UIButton(type: .system)
+        button.frame.size = CGSize(width: 100, height: 100)
+        
+        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        button.imageEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
         button.setImage(#imageLiteral(resourceName: "like_unselected").withRenderingMode(.alwaysOriginal), for: .normal)
         button.addTarget(self, action: #selector(handleLike), for: .touchUpInside)
         return button
@@ -51,6 +55,9 @@ class NewHomePostCell: UICollectionViewCell {
     
     private lazy var commentButton: UIButton = {
         let button = UIButton(type: .system)
+         button.frame.size = CGSize(width: 100, height: 100)
+             button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        button.imageEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
         button.setImage(#imageLiteral(resourceName: "comment").withRenderingMode(.alwaysOriginal), for: .normal)
         button.addTarget(self, action: #selector(handleComment), for: .touchUpInside)
         return button
@@ -58,6 +65,9 @@ class NewHomePostCell: UICollectionViewCell {
     
     private let sendMessageButton: UIButton = {
         let button = UIButton(type: .system)
+         button.frame.size = CGSize(width: 100, height: 100)
+             button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        button.imageEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
         button.setImage(#imageLiteral(resourceName: "send2").withRenderingMode(.alwaysOriginal), for: .normal)
         button.addTarget(self, action: #selector(handleShare), for: .touchUpInside)
         return button
@@ -65,7 +75,11 @@ class NewHomePostCell: UICollectionViewCell {
     
     private let readMore: UIButton = {
         let button = UIButton(type: .system)
+         //button.frame.size = CGSize(width: 100, height: 100)
         button.setImage(#imageLiteral(resourceName: "more").withRenderingMode(.alwaysOriginal), for: .normal)
+        button.imageEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+        //button.setTitle("share", for: .normal)
+        //button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         button.addTarget(self, action: #selector(handleReadMore), for: .touchUpInside)
         return button
     }()
@@ -108,6 +122,7 @@ class NewHomePostCell: UICollectionViewCell {
         sendMessageButton.addTarget(self, action: #selector(handleShare), for: .touchUpInside)
         readMore.addTarget(self, action: #selector(handleReadMore), for: .touchUpInside)
 
+        //let stackView = UIStackView(arrangedSubviews: [likeButton, commentButton, sendMessageButton])
         let stackView = UIStackView(arrangedSubviews: [likeButton, commentButton, sendMessageButton])
         stackView.distribution = .fillEqually
         stackView.alignment = .top
@@ -136,12 +151,42 @@ class NewHomePostCell: UICollectionViewCell {
     private func setupAttributedCaption() {
         guard let post = self.post else { return }
         
-        let attributedText = NSMutableAttributedString(string: post.title, attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14)])
-        attributedText.append(NSAttributedString(string: " \(post.caption)", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]))
-        attributedText.append(NSAttributedString(string: "\n\n", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 4)]))
+        
+//        for family in UIFont.familyNames.sorted() {
+//            let names = UIFont.fontNames(forFamilyName: family)
+//            print("Family: \(family) Font names: \(names)")
+//        }
+//        
+//        guard let customFont = UIFont(name: "OpenSans-Bold", size: UIFont.labelFontSize) else {
+//            fatalError("""
+//                Failed to load the "CustomFont-Light" font.
+//                Make sure the font file is included in the project and the font name is spelled correctly.
+//                """
+//            )
+//        }
+        
+//        let attributedText = NSMutableAttributedString(string: post.title, attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14)])
+//        attributedText.append(NSAttributedString(string: " \(post.caption)", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]))
+//        attributedText.append(NSAttributedString(string: "\n\n", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 4)]))
+        let attributedText = NSMutableAttributedString(string: post.title, attributes: [NSAttributedString.Key.font : UIFont(name: "OpenSans-Bold", size: 17)])
+        attributedText.append(NSAttributedString(string: " \(post.caption)", attributes: [NSAttributedString.Key.font: UIFont(name: "OpenSans", size: 15)]))
+        attributedText.append(NSAttributedString(string: "\n", attributes: [NSAttributedString.Key.font: UIFont(name: "OpenSans", size: 14)]))
+
         
         let timeAgoDisplay = post.creationDate.timeAgoDisplay()
-        attributedText.append(NSAttributedString(string: timeAgoDisplay, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: UIColor.gray]))
+        attributedText.append(NSAttributedString(string: timeAgoDisplay, attributes: [NSAttributedString.Key.font: UIFont(name: "OpenSans", size: 14), NSAttributedString.Key.foregroundColor: UIColor.gray]))
+        
+        
+        // *** Create instance of `NSMutableParagraphStyle`
+        let paragraphStyle = NSMutableParagraphStyle()
+
+        // *** set LineSpacing property in points ***
+        paragraphStyle.lineSpacing = 2 // Whatever line spacing you want in points
+
+        // *** Apply attribute to string ***
+        attributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedText.length))
+        
+        
         captionLabel.attributedText = attributedText
     }
     

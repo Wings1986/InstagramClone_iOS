@@ -32,7 +32,7 @@ class UserProfileEmptyStateCell: UICollectionViewCell {
     }
     
     private func sharedInit() {
-        addSubview(noPostsLabel)
-        noPostsLabel.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
+//        addSubview(noPostsLabel)
+//        noPostsLabel.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
     }
 }

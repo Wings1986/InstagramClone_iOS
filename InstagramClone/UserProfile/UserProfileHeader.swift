@@ -86,7 +86,7 @@ class UserProfileHeader: UICollectionViewCell {
         profileImageView.anchor(top: topAnchor, left: leftAnchor, paddingTop: padding, paddingLeft: padding, width: 80, height: 80)
         profileImageView.layer.cornerRadius = 80 / 2
         
-        layoutBottomToolbar()
+        // layoutBottomToolbar()
         
         addSubview(usernameLabel)
         usernameLabel.anchor(top: topAnchor, left: profileImageView.rightAnchor, right: rightAnchor, paddingTop: padding, paddingLeft: padding, paddingRight: padding, height: 50)
@@ -251,7 +251,7 @@ private class UserProfileFollowButton: UIButton {
     }
     
     private func setupEditStyle() {
-        setTitle("Change Avatar", for: .normal)
+        setTitle("Change Profile Image", for: .normal)
         setTitleColor(.black, for: .normal)
         backgroundColor = .white
         isUserInteractionEnabled = true

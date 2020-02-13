@@ -49,6 +49,7 @@ class UserProfileController: ProfilePostCellViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem?.tintColor = .black
         
+
         NotificationCenter.default.addObserver(self, selector: #selector(handleRefresh), name: NSNotification.Name.updateUserProfileFeed, object: nil)
         
         collectionView?.backgroundColor = .white
@@ -57,10 +58,10 @@ class UserProfileController: ProfilePostCellViewController {
         collectionView?.register(HomePostCell.self, forCellWithReuseIdentifier: HomePostCell.cellId)
         collectionView?.register(UserProfileEmptyStateCell.self, forCellWithReuseIdentifier: UserProfileEmptyStateCell.cellId)
         
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
-        collectionView?.refreshControl = refreshControl
-        
+//        let refreshControl = UIRefreshControl()
+//        refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+//        collectionView?.refreshControl = refreshControl
+
         configureAlertController()
     }
     
@@ -97,7 +98,7 @@ class UserProfileController: ProfilePostCellViewController {
         navigationItem.title = user.username
         header?.user = user
         
-        handleRefresh()
+//        handleRefresh()
     }
     
     @objc private func handleSettings() {
@@ -148,7 +149,9 @@ class UserProfileController: ProfilePostCellViewController {
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomePostCell.cellId, for: indexPath) as! HomePostCell
         cell.post = posts[indexPath.item]
-        cell.delegate = self
+        
+        //cell.delegate = self
+        
         return cell
     }
     
@@ -279,7 +282,10 @@ extension UserProfileController: UIImagePickerControllerDelegate & UINavigationC
         }
 
         header?.profileImageView.image = image
-        finishUpdatingUserProfile = false
+        
+        //finishUpdatingUserProfile = false
+        finishUpdatingUserProfile = true
+        
         Storage.storage().uploadUserProfileImage(image: image, completion: { (profileImageUrl) in
             Auth.auth().uploadUser(withUID: uid, username: username, profileImageUrl: profileImageUrl) {
                 self.finishUpdatingUserProfile = true

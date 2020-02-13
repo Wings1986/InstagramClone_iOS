@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45A3BC6F23F500B6008BD2C3 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45A3BC6C23F4FECA008BD2C3 /* OpenSans-Bold.ttf */; };
+		45A3BC7023F500BA008BD2C3 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45A3BC6B23F4FECA008BD2C3 /* OpenSans-BoldItalic.ttf */; };
+		45A3BC7123F500BD008BD2C3 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45A3BC6723F4FECA008BD2C3 /* OpenSans-Italic.ttf */; };
+		45A3BC7223F500BF008BD2C3 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45A3BC6923F4FECA008BD2C3 /* OpenSans-Light.ttf */; };
+		45A3BC7323F500C1008BD2C3 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45A3BC6A23F4FECA008BD2C3 /* OpenSans-LightItalic.ttf */; };
+		45A3BC7423F500C4008BD2C3 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45A3BC6E23F4FECB008BD2C3 /* OpenSans-Regular.ttf */; };
+		45A3BC7623F5071B008BD2C3 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3BC7523F5071B008BD2C3 /* String+HTML.swift */; };
 		93F17CE19E192A4D2123BAC4 /* Pods_InstagramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F228D1F0B539C515EB0A6B8F /* Pods_InstagramClone.framework */; };
 		9A000D9523E7FA0000367108 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A000D9423E7FA0000367108 /* GoogleService-Info.plist */; };
 		9A000D9723E809D500367108 /* ProfilePostCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A000D9623E809D500367108 /* ProfilePostCellViewController.swift */; };
@@ -51,6 +58,13 @@
 
 /* Begin PBXFileReference section */
 		09578B8F3D737CD5AC684ECA /* Pods-InstagramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramClone/Pods-InstagramClone.release.xcconfig"; sourceTree = "<group>"; };
+		45A3BC6723F4FECA008BD2C3 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		45A3BC6923F4FECA008BD2C3 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		45A3BC6A23F4FECA008BD2C3 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		45A3BC6B23F4FECA008BD2C3 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		45A3BC6C23F4FECA008BD2C3 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		45A3BC6E23F4FECB008BD2C3 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		45A3BC7523F5071B008BD2C3 /* String+HTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
 		9A000D9423E7FA0000367108 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9A000D9623E809D500367108 /* ProfilePostCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostCellViewController.swift; sourceTree = "<group>"; };
 		9A000D9823E812B100367108 /* NewHomePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHomePostCell.swift; sourceTree = "<group>"; };
@@ -126,6 +140,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		45A3BC6423F4FE60008BD2C3 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				45A3BC6C23F4FECA008BD2C3 /* OpenSans-Bold.ttf */,
+				45A3BC6B23F4FECA008BD2C3 /* OpenSans-BoldItalic.ttf */,
+				45A3BC6723F4FECA008BD2C3 /* OpenSans-Italic.ttf */,
+				45A3BC6923F4FECA008BD2C3 /* OpenSans-Light.ttf */,
+				45A3BC6A23F4FECA008BD2C3 /* OpenSans-LightItalic.ttf */,
+				45A3BC6E23F4FECB008BD2C3 /* OpenSans-Regular.ttf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
 		9A000D9E23E8173900367108 /* New Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +176,7 @@
 		AD215F14205DA991000E42AD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				45A3BC7523F5071B008BD2C3 /* String+HTML.swift */,
 				ADE95AF8210D4539003D9A54 /* CustomImageView.swift */,
 				AD215F15205DA9B6000E42AD /* Extensions.swift */,
 				ADAC0807210FD4C900615E62 /* FirebaseUtilities.swift */,
@@ -180,6 +208,7 @@
 		AD2A2CAF205C88DE0023D5C8 /* InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
+				45A3BC6423F4FE60008BD2C3 /* font */,
 				9A000DA123E9AB4600367108 /* GigglePets.entitlements */,
 				AD2A2CB0205C88DE0023D5C8 /* AppDelegate.swift */,
 				AD4D8CEB2060634600A49BA4 /* MainTabBarController.swift */,
@@ -345,7 +374,13 @@
 			files = (
 				AD2A2CBB205C88DE0023D5C8 /* LaunchScreen.storyboard in Resources */,
 				9A000D9523E7FA0000367108 /* GoogleService-Info.plist in Resources */,
+				45A3BC7223F500BF008BD2C3 /* OpenSans-Light.ttf in Resources */,
+				45A3BC6F23F500B6008BD2C3 /* OpenSans-Bold.ttf in Resources */,
+				45A3BC7123F500BD008BD2C3 /* OpenSans-Italic.ttf in Resources */,
 				AD2A2CB8205C88DE0023D5C8 /* Assets.xcassets in Resources */,
+				45A3BC7323F500C1008BD2C3 /* OpenSans-LightItalic.ttf in Resources */,
+				45A3BC7423F500C4008BD2C3 /* OpenSans-Regular.ttf in Resources */,
+				45A3BC7023F500BA008BD2C3 /* OpenSans-BoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +512,7 @@
 				AD4D8CEC2060634600A49BA4 /* MainTabBarController.swift in Sources */,
 				AD3164D821167E4E001F5DA7 /* PlaceholderTextView.swift in Sources */,
 				AD4D8CF12060827500A49BA4 /* UserProfileHeader.swift in Sources */,
+				45A3BC7623F5071B008BD2C3 /* String+HTML.swift in Sources */,
 				AD4D8CEE2060648B00A49BA4 /* UserProfileController.swift in Sources */,
 				AD2A2CB1205C88DE0023D5C8 /* AppDelegate.swift in Sources */,
 				AD32EF752114D05000BB7B56 /* PreviewPhotoContainerView.swift in Sources */,

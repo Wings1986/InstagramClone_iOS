@@ -32,6 +32,7 @@ class MainTabBarController: UITabBarController {
     
     func setupViewControllers() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
+        
         let homeNavController = self.templateNavController(unselectedImage: #imageLiteral(resourceName: "home_unselected"), selectedImage: #imageLiteral(resourceName: "home_selected"), rootViewController: HomeController(collectionViewLayout: UICollectionViewFlowLayout()))
         let plusNavController = self.templateNavController(unselectedImage: #imageLiteral(resourceName: "plus_unselected"), selectedImage: #imageLiteral(resourceName: "plus_unselected"))
         let userProfileController = UserProfileController(collectionViewLayout: UICollectionViewFlowLayout())
@@ -41,7 +42,7 @@ class MainTabBarController: UITabBarController {
             userProfileController.user = user
         }
         
-        viewControllers = [homeNavController, plusNavController ,userProfileNavController]
+        viewControllers = [homeNavController, /*plusNavController,*/ userProfileNavController]
     }
 
     lazy var authUI: FUIAuth? = {
@@ -75,9 +76,9 @@ class MainTabBarController: UITabBarController {
         
         let loginController = self.authUI!.authViewController()
         loginController.modalPresentationStyle = .fullScreen
-        let imgView = UIImageView(image: #imageLiteral(resourceName: "logo.png") )
+        let imgView = UIImageView(image: UIImage(named: "logo_big") )
         imgView.contentMode = .scaleAspectFit
-        imgView.frame = CGRect(x: 0, y: view.safeAreaInsets.top, width: loginController.view.safeAreaLayoutGuide.layoutFrame.width, height: 200)
+        imgView.frame = CGRect(x: 0, y: view.safeAreaInsets.top, width: loginController.view.safeAreaLayoutGuide.layoutFrame.width, height: 400)
         loginController.view.backgroundColor = .white
         
         for child in loginController.children {
@@ -112,22 +113,13 @@ class MainTabBarController: UITabBarController {
 
 extension MainTabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        let index = viewControllers?.index(of: viewController)
-        if index == 1 {
-            
-            showImageSoureActionSheet()
-//            let picker = UIImagePickerController()
-//            picker.sourceType = .photoLibrary
-//            picker.delegate = self
-////            let nacController = UINavigationController(rootViewController: picker)
-//            present(picker, animated: true, completion: nil)
-            
-//            let layout = UICollectionViewFlowLayout()
-//            let photoSelectorController = PhotoSelectorController(collectionViewLayout: layout)
-//            let nacController = UINavigationController(rootViewController: photoSelectorController)
-//            present(nacController, animated: true, completion: nil)
-            return false
-        }
+//        let index = viewControllers?.index(of: viewController)
+//        if index == 1 {
+//
+//            showImageSoureActionSheet()
+//
+//            return false
+//        }
         return true
     }
 }
